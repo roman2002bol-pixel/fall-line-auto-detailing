@@ -77,15 +77,36 @@
     <div class="container">
       <div class="breadcrumbs"><a href="index.html">Home</a> / Contact</div>
       <h1>Book your mobile detail</h1>
-      <p class="lede muted" style="color:#cfe0e6">Fastest way to get on the schedule: call or text. Prefer to type it out? Use the form below.</p>
+      <p class="lede muted" style="color:#cfe0e6">Pick an open slot on our live calendar below, or call/text us directly.</p>
     </div>
   </section>
 
   <section>
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Pick a Time</span>
+        <h2>Book directly on our calendar</h2>
+        <p>See real-time availability and grab a slot instantly — no back-and-forth.</p>
+      </div>
+      <!--
+        CALENDLY SETUP: create a free account at calendly.com, add an Event
+        Type (e.g. "Mobile Detail Appointment"), and under that event's
+        booking questions add: vehicle make/model, package, and city/area —
+        that replaces the need for a separate quote form below. Then swap
+        the data-url below for your real scheduling link.
+      -->
+      <div class="calendly-embed">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-CALENDLY-USERNAME/mobile-detail" style="min-width:280px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
     <div class="container two-col-layout">
       <div class="form-card">
-        <h2 style="margin-bottom:.25rem">Request a Free Quote</h2>
-        <p class="muted">We'll confirm your exact price and the next available time.</p>
+        <h2 style="margin-bottom:.25rem">Or Tell Us the Job Details First</h2>
+        <p class="muted">Not sure which package fits, or want to describe your vehicle before picking a time? Send this and we'll follow up.</p>
 
         <!--
           BACKEND SETUP NEEDED: this form has no server behind it yet, so

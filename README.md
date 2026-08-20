@@ -65,6 +65,23 @@ own review widget. There's also a "Leave a Review" button that needs your
 Google Business Profile Place ID (instructions are in an HTML comment right
 above it in `reviews.html`).
 
+**Live scheduling (Calendly)** — `contact.html` now embeds a Calendly
+inline calendar above the quote form, so customers can pick a real open
+time slot themselves. To activate it:
+1. Sign up free at [calendly.com](https://calendly.com) (the free plan
+   supports one event type — plenty to start).
+2. Create an Event Type, e.g. "Mobile Detail Appointment," and set your
+   real working hours/duration.
+3. Under that event's booking questions, add custom questions for vehicle
+   make/model, package choice, and city — this makes the quote form below
+   optional/backup rather than required.
+4. Copy your scheduling link (looks like
+   `calendly.com/your-name/mobile-detail`) and paste it into the
+   `data-url="..."` attribute in `contact.html` (search for
+   `YOUR-CALENDLY-USERNAME`).
+5. Free plan shows a small "Powered by Calendly" mark — normal, and removable
+   on a paid plan later if you want.
+
 **Booking form** (`contact.html`) — the form currently has no backend, so a
 submission opens a pre-filled email as a fallback (nothing is ever lost, but
 it's not fully automatic). To wire it up properly, pick one:
