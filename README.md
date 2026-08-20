@@ -65,22 +65,21 @@ own review widget. There's also a "Leave a Review" button that needs your
 Google Business Profile Place ID (instructions are in an HTML comment right
 above it in `reviews.html`).
 
-**Live scheduling (Calendly)** — `contact.html` now embeds a Calendly
-inline calendar above the quote form, so customers can pick a real open
-time slot themselves. To activate it:
-1. Sign up free at [calendly.com](https://calendly.com) (the free plan
-   supports one event type — plenty to start).
-2. Create an Event Type, e.g. "Mobile Detail Appointment," and set your
-   real working hours/duration.
-3. Under that event's booking questions, add custom questions for vehicle
-   make/model, package choice, and city — this makes the quote form below
-   optional/backup rather than required.
-4. Copy your scheduling link (looks like
-   `calendly.com/your-name/mobile-detail`) and paste it into the
-   `data-url="..."` attribute in `contact.html` (search for
-   `YOUR-CALENDLY-USERNAME`).
-5. Free plan shows a small "Powered by Calendly" mark — normal, and removable
-   on a paid plan later if you want.
+**Live scheduling (Setmore)** — `contact.html` has a "Choose a Package &
+Book a Time" button that opens your Setmore booking page, so customers pick
+their own package and an open time slot. To activate it:
+1. Sign up free at [setmore.com](https://setmore.com).
+2. Under Services, add your packages (Standard Detail, Interior Only Deep
+   Clean, Full Detail, Ceramic Coating, plus any vehicle-size tiers or new
+   offerings you want) with your own real durations, prices, and
+   descriptions.
+3. Set your working hours/staff.
+4. Copy your booking page link (looks like
+   `https://your-business-name.setmore.com`) and paste it into the button's
+   `href` in `contact.html` (search for `YOUR-BUSINESS-NAME`).
+5. Optional — for an in-page popup instead of opening a new tab: in the
+   Setmore dashboard go to Booking Page → Add to Website, copy the embed
+   snippet it generates, and send it over to swap in.
 
 **Booking form** (`contact.html`) — the form currently has no backend, so a
 submission opens a pre-filled email as a fallback (nothing is ever lost, but
