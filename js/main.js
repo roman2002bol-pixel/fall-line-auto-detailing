@@ -1,4 +1,4 @@
-/* Fall Line Auto Detailing — site behavior. Vanilla JS, no dependencies. */
+/* River City Mobile Detailing — site behavior. Vanilla JS, no dependencies. */
 (function () {
   "use strict";
 
@@ -53,20 +53,6 @@
     }
   });
 
-  /* ---------- before/after compare slider ---------- */
-  document.querySelectorAll("[data-compare]").forEach(function (compare) {
-    var afterWrap = compare.querySelector(".after-wrap");
-    var handle = compare.querySelector(".compare-handle");
-    var range = compare.querySelector(".compare-range");
-    if (!afterWrap || !range) return;
-    function update(value) {
-      afterWrap.style.width = value + "%";
-      if (handle) handle.style.left = value + "%";
-    }
-    range.addEventListener("input", function (e) { update(e.target.value); });
-    update(range.value || 50);
-  });
-
   /* ---------- booking / quote form ---------- */
   var form = document.querySelector("[data-booking-form]");
   if (form) {
@@ -81,9 +67,9 @@
         var data = new FormData(form);
         var lines = [];
         data.forEach(function (value, key) { lines.push(key + ": " + value); });
-        var subject = encodeURIComponent("New booking request — Fall Line Auto Detailing");
+        var subject = encodeURIComponent("New booking request — River City Mobile Detailing");
         var body = encodeURIComponent(lines.join("\n"));
-        window.location.href = "mailto:info@falllineautodetailing.com?subject=" + subject + "&body=" + body;
+        window.location.href = "mailto:info@rivercitymobiledetailing.com?subject=" + subject + "&body=" + body;
         if (status) {
           status.textContent = "Opening your email app to send the request — or just call/text us instead.";
           status.className = "form-status ok is-visible";

@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Fall Line Auto Detailing — design system
+   River City Mobile Detailing — design system
    Mobile-first, zero external UI dependencies, fast-loading.
-   Brand hook: "fall line" = the geological line where a river drops from
-   higher to lower elevation (literally runs through Richmond/the James
-   River). We echo that with a subtle topographic contour-line motif
-   instead of the generic "water droplet" clichés most detailers use.
+   Brand hook: Richmond, VA is nicknamed "River City" after the James
+   River running through it. We echo that with a subtle topographic
+   contour-line motif instead of the generic "water droplet" clichés
+   most detailers use.
    ========================================================================== */
 
 :root {
@@ -23,7 +23,7 @@
   --success: #1fa971;
 
   /* Type */
-  --font-head: "Fall Line Head", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-head: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   /* Rhythm */
@@ -207,45 +207,26 @@ body { padding-bottom: 70px; }
 
 /* -------------------------------------------------- hero ---------------- */
 .hero {
-  position: relative; background: linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
-  color: #fff; overflow: hidden;
+  position: relative; background: var(--ink); color: #fff; overflow: hidden;
   background-image:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><path d='M-10 24 Q 25 4 60 24 T 150 24' stroke='rgba(255,255,255,0.07)' fill='none' stroke-width='1'/><path d='M-10 70 Q 25 50 60 70 T 150 70' stroke='rgba(255,255,255,0.07)' fill='none' stroke-width='1'/><path d='M-10 116 Q 25 96 60 116 T 150 116' stroke='rgba(255,255,255,0.07)' fill='none' stroke-width='1'/></svg>"),
-    linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+    linear-gradient(180deg, rgba(12,26,40,.88) 0%, rgba(19,42,61,.93) 100%),
+    url("images/hero-bg.jpg");
+  background-size: auto, cover, cover;
+  background-position: center, center, center;
+  background-repeat: repeat, no-repeat, no-repeat;
 }
 .hero .container { padding-block: clamp(2.75rem, 7vw, 5.5rem); display: grid; gap: 2.5rem; align-items: center; }
-@media (min-width: 900px) { .hero .container { grid-template-columns: 1.05fr .95fr; } }
 .hero-badges { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.1rem; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: .4rem; background: rgba(255,255,255,.1);
   border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: .35rem .8rem; font-size: .78rem; font-weight: 600;
 }
-.hero h1 { color: #fff; max-width: 18ch; }
-.hero .lede { color: #cfe0e6; font-size: 1.08rem; max-width: 46ch; }
+.hero h1 { color: #fff; max-width: 22ch; }
+.hero .lede { color: #cfe0e6; font-size: 1.08rem; max-width: 52ch; }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
 .hero-trust { display: flex; flex-wrap: wrap; gap: .9rem 1.4rem; margin-top: 2rem; font-size: .85rem; color: #b9cdd4; }
 .hero-trust strong { color: #fff; display: block; font-size: 1.3rem; font-family: var(--font-head); }
-
-/* Before/after compare */
-.compare {
-  position: relative; aspect-ratio: 5/4; border-radius: var(--radius); overflow: hidden;
-  box-shadow: var(--shadow-lg); border: 4px solid rgba(255,255,255,.14);
-}
-.compare .img-slot { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; border-radius: 0; }
-.compare .after-wrap { position: absolute; inset: 0; width: 50%; overflow: hidden; border-right: 2px solid #fff; }
-.compare .after-wrap .img-slot { width: 200%; max-width: none; }
-.compare-tag { position: absolute; top: 10px; z-index: 3; background: rgba(12,26,40,.72); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: .3rem .6rem; border-radius: 6px; }
-.compare-tag.before-tag { left: 10px; }
-.compare-tag.after-tag { right: 10px; }
-.compare-handle {
-  position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #fff; z-index: 4; cursor: ew-resize;
-}
-.compare-handle::after {
-  content: "⟷"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 38px; height: 38px; background: #fff; color: var(--ink); border-radius: 50%;
-  display: grid; place-items: center; font-size: 1rem; box-shadow: var(--shadow-md);
-}
-.compare-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
 
 /* image placeholder slots (swap in real photos by matching filenames) */
 .img-slot {
@@ -262,6 +243,20 @@ body { padding-bottom: 70px; }
 }
 .img-slot.is-empty .img-slot-label { display: flex; }
 .img-slot.round { border-radius: 999px; }
+
+/* -------------------------------------------------- service rows -------- */
+.service-rows { display: flex; flex-direction: column; gap: clamp(2.75rem, 6vw, 4.5rem); }
+.service-row { display: grid; grid-template-columns: 1fr; gap: 1.75rem; align-items: center; }
+@media (min-width: 860px) {
+  .service-row { grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4rem); }
+  .service-row.reverse .service-row-media { order: 2; }
+}
+.service-row-media .img-slot { box-shadow: var(--shadow-md); }
+.service-row-body .package-list { margin: 1.1rem 0 1.4rem; gap: .6rem; }
+.service-row-price { display: flex; align-items: baseline; gap: .55rem; margin: 0 0 1.1rem; }
+.service-row-price strong { font-family: var(--font-head); font-size: 1.7rem; font-weight: 800; color: var(--ink); }
+.service-row-price span { font-size: .85rem; color: var(--text-muted); }
+.service-row-ctas { display: flex; flex-wrap: wrap; gap: .75rem; }
 
 /* -------------------------------------------------- packages / pricing -- */
 .packages-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }

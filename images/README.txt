@@ -1,17 +1,21 @@
-IMAGE CHECKLIST — Fall Line Auto Detailing
-===========================================
+IMAGE CHECKLIST — River City Mobile Detailing
+==============================================
 Drop files into this folder using the EXACT names below and every placeholder
 box on the site will automatically be replaced with your real photo — no code
 edits needed. Until a file exists, the page shows a labeled gray placeholder
-instead of a broken image.
+instead of a broken image (the hero background is the one exception — it
+just quietly shows the plain background until you add it, see below).
 
 Recommended format: .jpg, optimized/compressed (mobile-first = fast loading).
 Sizes below are a guide, not a hard requirement — object-fit:cover will crop
 to match, so slightly different ratios are fine.
 
 HOME PAGE
-  hero-before.jpg            1200x960   "before" side of homepage slider
-  hero-after.jpg             1200x960   "after" side of homepage slider
+  hero-bg.jpg                1920x1200  full-bleed hero background photo
+  service-standard.jpg       800x600    Standard Detail row photo
+  service-interior.jpg       800x600    Interior Only Deep Clean row photo
+  service-full.jpg           800x600    Full Detail row photo
+  service-ceramic.jpg        800x600    Ceramic Coating row photo
 
 ABOUT PAGE
   about-team.jpg             900x1125   team/technician portrait or action shot
@@ -36,6 +40,7 @@ in that city if you have one, otherwise any strong before/after works)
   area-short-pump.jpg        900x675
 
 LOGO / FAVICON
-  The header currently uses a text-based "FL" wordmark (no image needed to
+  The header currently uses a text-based "RC" wordmark (no image needed to
   look finished). If you have a real logo file, see README.md in the project
-  root for how to swap it in.
+  root for how to swap it in, and for a ready-to-use AI logo-generation
+  prompt if you don't have one yet.

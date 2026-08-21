@@ -1,4 +1,4 @@
-# Fall Line Auto Detailing — Website
+# River City Mobile Detailing — Website
 
 A complete, static (HTML/CSS/JS only — no build step, no dependencies) 15-page
 website, built mobile-first for a mobile detailing business serving the
@@ -31,7 +31,7 @@ areas/                One page per service-area city (unique copy on each,
   glen-allen.html
   short-pump.html
 css/style.css          All design/styling — one file, no framework
-js/main.js             Mobile nav, before/after slider, form handling
+js/main.js             Mobile nav, image placeholders, form handling
 images/README.txt      Exact filenames the site expects — drop your photos in
 ```
 
@@ -39,7 +39,7 @@ images/README.txt      Exact filenames the site expects — drop your photos in
 
 **Phone number & email** — every page currently uses a placeholder number
 `(804) 555-0142` (as text, `tel:+18045550142`, and `sms:+18045550142`) and
-`info@falllineautodetailing.com`. Once you have a real business number,
+`info@rivercitymobiledetailing.com`. Once you have a real business number,
 replace it everywhere in one shot:
 
 ```powershell
@@ -48,7 +48,7 @@ Get-ChildItem -Recurse -Include *.html,*.js | ForEach-Object {
   (Get-Content $_.FullName -Raw) `
     -replace '\(804\) 555-0142', '(YOUR) NEW-NUMBER' `
     -replace '\+18045550142', '+1YOURNEWNUMBER' `
-    -replace 'info@falllineautodetailing\.com', 'your-real-email@example.com' |
+    -replace 'info@rivercitymobiledetailing\.com', 'your-real-email@example.com' |
     Set-Content $_.FullName -NoNewline
 }
 ```
@@ -57,6 +57,8 @@ so click-to-call and click-to-text work correctly.
 
 **Images** — see `images/README.txt` for the exact filenames. Drop matching
 files into `/images` and every placeholder box disappears automatically.
+The homepage hero also expects a background photo at `images/hero-bg.jpg`
+(a wide, moody shot works best — see the CSS notes in section 6).
 
 **Reviews** (`reviews.html` and the homepage) — the review cards are marked
 `[Add a real Google review here]` on purpose. Don't invent testimonials —
@@ -70,8 +72,8 @@ Book a Time" button that opens your Setmore booking page, so customers pick
 their own package and an open time slot. To activate it:
 1. Sign up free at [setmore.com](https://setmore.com).
 2. Under Services, add your packages (Standard Detail, Interior Only Deep
-   Clean, Full Detail, Ceramic Coating, plus any vehicle-size tiers or new
-   offerings you want) with your own real durations, prices, and
+   Clean, Full Detail, Ceramic Coating — Two Year and Three Year — plus any
+   new offerings you want) with your own real durations, prices, and
    descriptions.
 3. Set your working hours/staff.
 4. Copy your booking page link (looks like
@@ -95,12 +97,12 @@ it's not fully automatic). To wire it up properly, pick one:
 your real founding story, certifications, and specifics — that's what
 actually builds trust, more than any stock copy can.
 
-**Logo** — the header uses a clean text-based "FL / Fall Line / Auto
+**Logo** — the header uses a clean text-based "RC / River City / Mobile
 Detailing" wordmark, so the site looks finished with zero extra assets. If
-you get a real logo file later, replace the `<span class="logo-mark">FL</span>`
+you get a real logo file later, replace the `<span class="logo-mark">RC</span>`
 + `<span class="logo-text">…</span>` block (appears identically near the top
-of every page) with an `<img src="images/logo.png" alt="Fall Line Auto
-Detailing">`.
+of every page) with an `<img src="images/logo.png" alt="River City Mobile
+Detailing">`. See section 7 for how to get a logo made.
 
 ## 4. Deploying
 
@@ -114,7 +116,7 @@ Any static host works since there's no server-side code:
 
 Once you have a domain, update the `<link rel="canonical">` tags and the
 `AutoDetailing` JSON-LD block in `index.html` from the placeholder
-`falllineautodetailing.com` to your real domain.
+`rivercitymobiledetailing.com` to your real domain.
 
 ## 5. SEO already built in
 
@@ -131,12 +133,44 @@ Once you have a domain, update the `<link rel="canonical">` tags and the
 
 ## 6. Design notes (why it doesn't look like a template)
 
-The visual system leans on the brand name itself: "Fall Line" is the actual
-geological term for where a river drops from higher to lower elevation —
-Richmond sits right on the James River's fall line. Instead of the generic
-water-droplet/bubble graphics most detailing sites use, the site's background
-texture and section dividers use a subtle topographic contour-line motif tied
-to that idea, paired with a deep navy + teal palette (`css/style.css`, top
-`:root` block — change the `--accent` and `--ink` variables there to retheme
-the whole site in one place) and a sticky mobile call/text/book bar that's
-genuinely functional, not just decorative.
+The visual system leans on the brand name itself: Richmond, VA is nicknamed
+"River City" after the James River running through it. Instead of the
+generic water-droplet/bubble graphics most detailing sites use, the site's
+background texture and section dividers use a subtle topographic
+contour-line motif tied to that idea, paired with a deep navy + teal palette
+(`css/style.css`, top `:root` block — change the `--accent` and `--ink`
+variables there to retheme the whole site in one place) and a sticky mobile
+call/text/book bar that's genuinely functional, not just decorative.
+
+The homepage hero is a full-bleed photo background (`.hero` in
+`css/style.css` — set via `background-image` alongside the contour texture,
+with a dark gradient overlaid for text contrast) rather than a stock
+before/after graphic. Drop your photo in as `images/hero-bg.jpg`; until then
+it just shows the plain navy/contour background, nothing breaks.
+
+## 7. Getting a real logo made
+
+The current header/footer logo is a clean text wordmark ("RC" mark +
+"River City / Mobile Detailing"), so the site looks finished with zero
+extra assets — there's no rush to replace it. When you're ready for a real
+mark, here's a prompt written for the brand's actual palette and concept,
+ready to paste into an AI image tool (Midjourney, DALL·E, Ideogram, etc.):
+
+> Minimalist flat vector logo mark for "River City Mobile Detailing," a
+> premium mobile car detailing service. Combine a subtle car silhouette or
+> shine/sparkle motif with a single flowing river/wave line underneath it,
+> referencing the James River running through Richmond, Virginia. Clean
+> geometric shapes, two-color only: deep navy (#0c1a28) and teal (#1fb6ad)
+> on a white background. No gradients, no photographic detail, no text in
+> the mark itself. Must read clearly as a small icon (favicon-size) as well
+> as large. Style: modern, trustworthy, understated — not a cartoon car,
+> not a generic droplet clip-art icon.
+
+A few things that reliably improve logo-generation results with any tool:
+- Ask for several distinct concepts/variations, not one "final" image.
+- Explicitly ban gradients and drop shadows — they don't scale down well.
+- Request it on a plain white or transparent background, mark only (no
+  mockup, no business card, no environment).
+- Once you like a direction, ask the tool to "simplify further" or "reduce
+  to flat shapes" — first outputs from most AI image tools are usually
+  more detailed than a logo should be.
