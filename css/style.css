@@ -391,6 +391,19 @@ body { padding-bottom: 70px; }
 .badge-list span { background: var(--accent-soft); color: var(--accent-dark); font-size: .78rem; font-weight: 700; padding: .35rem .7rem; border-radius: 999px; }
 .local-callout { background: var(--accent-soft); border: 1px solid #bfe6e2; border-radius: var(--radius); padding: 1.25rem 1.5rem; font-size: .92rem; color: var(--ink); }
 
+/* -------------------------------------------------- pricing tier tables - */
+.tier-group-label { font-family: var(--font-head); font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--accent-dark); margin: 1.75rem 0 .6rem; }
+.tier-group-label:first-child { margin-top: 0; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.tier-table { width: 100%; min-width: 420px; border-collapse: collapse; background: var(--surface); }
+.tier-table th, .tier-table td { padding: .7rem .9rem; text-align: left; border-bottom: 1px solid var(--border); font-size: .9rem; }
+.tier-table tr:last-child td { border-bottom: none; }
+.tier-table th { font-family: var(--font-head); font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); background: var(--bg); }
+.tier-table td:last-child, .tier-table th:last-child { text-align: right; }
+.tier-table td:last-child { font-weight: 700; color: var(--ink); white-space: nowrap; }
+.tier-table td:nth-child(2) { color: var(--text-muted); white-space: nowrap; }
+.tier-note { font-size: .82rem; color: var(--text-muted); margin-top: .6rem; }
+
 /* -------------------------------------------------- section variants ---- */
 .section-alt { background: var(--surface); }
 .section-dark { background: var(--ink); color: #fff; }
